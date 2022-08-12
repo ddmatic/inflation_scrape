@@ -15,8 +15,7 @@ for i in range(first_year, last_year + 1):
     df = dfs[0]
 
     df_clean = df.droplevel(0, axis=1)
-    df_clean = df_clean[
-        ['Mesec', 'Mesečna stopainflacije', 'Godišnja stopainflacije', 'Stopa inflacijeod početka godine']]
+    df_clean = df_clean.iloc[:, :4] #[['Mesec', 'Mesečna stopainflacije', 'Godišnja stopainflacije', 'Stopa inflacijeod početka godine']]
 
     columns = [col for col in df_clean.columns]
     columns.remove('Mesec')
